@@ -47,7 +47,7 @@ end)
 # DropDown
 ```lua
 
-MainTab:CreateDropdown("Dropdown", {"Value 1", "Value 2 ", " 3", "Value 4"}, function(selectedOption)
+MainTab:CreateDropdown("Dropdown", {"Value 1", "Value 2 ", "Value 3", "Value 4"}, function(selectedOption)
 	--code here
 end)
 
