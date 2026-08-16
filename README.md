@@ -16,11 +16,11 @@ local VanixiaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thu
 
 -- 2. Initialize the Main Window
 local Window = VanixiaUI:CreateWindow({
-	Title = "Vanixia Ultimate Engine",
+	Title = "Vanixia Tab Hub",
 	Author = "by Thuan69392",
 	Size = UDim2.fromOffset(536, 327),
-  Color = "Yellow", -- Supported Themes: "Dark", "Light", "Yellow"
-	ToggleKey = Enum.KeyCode.K -- Keyboard shortcut to hide/show the menu
+	ToggleKey = Enum.KeyCode.K, -- set your key code
+	Color = "Yellow" -- or Light, Dark, and Yellow
 })
 
 -- 3. Create a Version/Status Tag right next to the title
@@ -37,83 +37,75 @@ local CombatTab = Window:CreateTab("Combat", "rocket")
 
 -- A. Standard Click Button
 MainTab:CreateButton("Claim Daily Reward", function()
-	print("Reward successfully claimed!")
+	--code here
 end)
 
 -- B. Animated On/Off Switch (Toggle)
 _G.AutoFarm = false
 MainTab:CreateToggle("Auto Collect Items", function(state)
-	_G.AutoFarm = state
-	if _G.AutoFarm then
-		print("Auto Collect activated!")
-	else
-		print("Auto Collect deactivated!")
-	end
+	--code here
 end)
 
 -- C. Selection Dropdown Menu
-MainTab:CreateDropdown("Select Teleport Area", {"Spawn Island", "Desert Village", "Snow City"}, function(selected)
-	print("Player selected area: " .. tostring(selected))
+MainTab:CreateDropdown("Dropdown", {"Value 1", "Value 2 ", " 3", "Value 4"}, function(selectedOption)
+	--code here
 end)
 
 -- D. Continuous Value Slider
 MainTab:CreateSlider("Movement Speed (WalkSpeed)", 16, 500, 16, function(value)
-	local player = game.Players.LocalPlayer
-	if player and player.Character and player.Character:FindFirstChild("Humanoid") then
-		player.Character.Humanoid.WalkSpeed = value
-	end
+    --code here
 end)
 
 -- E. Informational Text Frame (Paragraph - Autogrows and adapts layout height to wrap text)
-MainTab:CreateParagraph("System Patch Notes", "Notifications and Modal Confirmation Dialogs are now wrapped inside asynchronous task.spawn threads. This fixes past freezing bugs on the main viewport.")
+MainTab:CreateParagraph("Paragraph Title", "You text here")
 
 -- F. User Keyboard Input (Input Text)
-MainTab:CreateInput("Teleport to Target Player", "Type username here...", function(text, enterPressed)
-	print("Searching database for player: " .. tostring(text))
+MainTab:CreateInput("Input Title", "Input Text", function(text, enterPressed)
+    --code here
 end)
 
--- ========================================================================
--- 📁 ORGANIZING SUB-CATEGORIES (TAB SECTIONS)
--- ========================================================================
+
 local PvpSection = CombatTab:CreateSection("PVP Combo Configuration")
 
 -- All widgets called from a SectionObject will perfectly align inside that container block
 PvpSection:CreateToggle("Enable Auto Killaura", function(state) end)
 PvpSection:CreateButton("Target Nearest Enemy", function() end)
 
--- ========================================================================
--- 🌟 MODAL FLOATING POPUPS (NOTIFICATIONS & DIALOGS)
--- ========================================================================
 
 -- G. Toast Notification Popups (Slide-in bottom right card with a Linear Progress Bar)
+
+VanixiaUI:CreateNotification({
+	Title = "Notification",
+	Description = "Description Notification",
+	Icon = "refresh-cw", -- lucide icons
+	Theme = "Dark", -- or Light, Yellow
+	Duration = 3
+})
+
 -- Can be globally invoked from anywhere via the VanixiaUI Core Class
 MainTab:CreateButton("Trigger Sample Alert", function()
-	VanixiaUI:CreateNotification({
-		Title = "Syncing Configurations",
-		Description = "Please wait a moment while the engine updates the remote settings...",
-		Icon = "refresh-cw",
-		Theme = "Dark", -- Match colors according to the chosen active layout
-		Duration = 3 -- Runs the progress timeline and auto-destroys in 3 seconds
-	})
+	--code here
 end)
 
 -- H. Viewport Dimming Confirmation Dialog (Dialog - Intercepts mouse input and darkens window view)
 -- Bound directly to the main Window Object
-CombatTab:CreateButton("Wipe Config Cache", function()
+
+MainTab:CreateButton("Click Test", function()
 	Window:CreateDialog({
-		Title = "Are you absolutely sure?",
-		Message = "This permanent action will restore all mod configurations back to factory defaults. Do you want to proceed?",
-		AcceptText = "Confirm Wipe",
-		CancelText = "Go Back",
+		Title = "Dialog",
+		Message = "A dialog",
+		AcceptText = "OK",
+		CancelText = "NO",
 		Callback = function(confirmed)
-			if confirmed then
-				print("User confirmed action!")
+			if confirmed == true then
+				--code here
 			else
-				print("User cancelled action!")
+				--codehere
 			end
 		end
 	})
 end)
+
 ```
 
 ## Open Source License
