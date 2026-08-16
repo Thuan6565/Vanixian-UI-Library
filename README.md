@@ -10,11 +10,13 @@ VanixiaUI is a premium, lightweight, and responsive Object-Oriented User Interfa
 
 To execute the VanixiaUI library from any script executor or client-side script, copy and run the standard loadstring snippet below:
 
-```lua
--- 1. Load the UI Library from your GitHub Repository
-local VanixiaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thuan6565/Vanixian-UI-Library/refs/heads/main/VanixiaUI.lua"))()
 
--- 2. Initialize the Main Window
+# Load Library
+```lua
+local VanixiaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thuan6565/Vanixian-UI-Library/refs/heads/main/VanixiaUI.lua"))()
+```
+# Create Window
+```lua
 local Window = VanixiaUI:CreateWindow({
 	Title = "Vanixia Tab Hub",
 	Author = "by Thuan69392",
@@ -22,12 +24,14 @@ local Window = VanixiaUI:CreateWindow({
 	ToggleKey = Enum.KeyCode.K, -- set your key code
 	Color = "Yellow" -- or Light, Dark, and Yellow
 })
-
--- 3. Create a Version/Status Tag right next to the title
--- Supports custom Color3 values or syncs with predefined string names: "Dark", "Light", "Yellow"
+```
+# Tag
+```lua
 Window:CreateTag("PREMIUM", "Yellow")
+```
+# Tabs
+```lua
 
--- 4. Create Functional Tabs with Offline Lucide Icons
 local MainTab = Window:CreateTab("Home", "home")
 local CombatTab = Window:CreateTab("Combat", "rocket")
 
@@ -36,8 +40,6 @@ local CombatTab = Window:CreateTab("Combat", "rocket")
 ```
 # Toggle
 ```lua
-
-_G.AutoFarm = false
 MainTab:CreateToggle("Auto Collect Items", function(state)
 	--code here
 end)
@@ -52,7 +54,6 @@ end)
 ```
 # Slider
 ```lua
--- D. Continuous Value Slider
 MainTab:CreateSlider("Movement Speed (WalkSpeed)", 16, 500, 16, function(value)
     --code here
 end)
@@ -60,7 +61,6 @@ end)
 # Paragraph
 
 ```lua
--- E. Informational Text Frame (Paragraph - Autogrows and adapts layout height to wrap text)
 MainTab:CreateParagraph("Paragraph Title", "You text here")
 ```
 # Input
@@ -114,27 +114,7 @@ Window:CreateDialog({
 	})
 
 ```
- # EXAMPLE
-
-```lua
-
-MainTab:CreateButton("Click Test", function()
-	Window:CreateDialog({
-		Title = "Dialog",
-		Message = "A dialog",
-		AcceptText = "OK",
-		CancelText = "NO",
-		Callback = function(confirmed)
-			if confirmed == true then
-				--code here
-			else
-				--codehere
-			end
-		end
-	})
-end)
-
-```
+ # this is all or 1.0, more in 1.2 version 
 
 ## Open Source License
 This project is distributed under the lightweight MIT Open Source License. You are free to modify, customize, and bundle this UI package into your commercial or private script hubs. 
