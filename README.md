@@ -90,6 +90,24 @@ end)
 -- H. Viewport Dimming Confirmation Dialog (Dialog - Intercepts mouse input and darkens window view)
 -- Bound directly to the main Window Object
 
+--dialog
+
+Window:CreateDialog({
+		Title = "Dialog",
+		Message = "A dialog",
+		AcceptText = "OK",
+		CancelText = "NO",
+		Callback = function(confirmed)
+			if confirmed == true then
+				--code here
+			else
+				--codehere
+			end
+		end
+	})
+
+--ex
+
 MainTab:CreateButton("Click Test", function()
 	Window:CreateDialog({
 		Title = "Dialog",
