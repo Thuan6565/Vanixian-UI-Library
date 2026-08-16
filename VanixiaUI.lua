@@ -1,7 +1,7 @@
 local VanixiaUI = {}
 VanixiaUI.__index = VanixiaUI
 
-local VanixiaIcons = require(game:GetService("ReplicatedStorage"):WaitForChild("LucideIcons"))
+local VanixiaIcons = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thuan6565/Vanixian-UI-Library/refs/heads/main/LucideIcons.lua"))()
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
