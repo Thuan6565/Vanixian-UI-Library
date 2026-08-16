@@ -31,49 +31,55 @@ Window:CreateTag("PREMIUM", "Yellow")
 local MainTab = Window:CreateTab("Home", "home")
 local CombatTab = Window:CreateTab("Combat", "rocket")
 
--- ========================================================================
--- 🧱 INTERACTIVE COMPONENTS (WIDGETS) WITHIN TABS
--- ========================================================================
 
--- A. Standard Click Button
-MainTab:CreateButton("Claim Daily Reward", function()
-	--code here
-end)
 
--- B. Animated On/Off Switch (Toggle)
+```
+# Toggle
+```lua
+
 _G.AutoFarm = false
 MainTab:CreateToggle("Auto Collect Items", function(state)
 	--code here
 end)
+```
+# DropDown
+```lua
 
--- C. Selection Dropdown Menu
 MainTab:CreateDropdown("Dropdown", {"Value 1", "Value 2 ", " 3", "Value 4"}, function(selectedOption)
 	--code here
 end)
 
+```
+# Slider
+```lua
 -- D. Continuous Value Slider
 MainTab:CreateSlider("Movement Speed (WalkSpeed)", 16, 500, 16, function(value)
     --code here
 end)
+```
+# Paragraph
 
+```lua
 -- E. Informational Text Frame (Paragraph - Autogrows and adapts layout height to wrap text)
 MainTab:CreateParagraph("Paragraph Title", "You text here")
+```
+# Input
+```lua
 
--- F. User Keyboard Input (Input Text)
 MainTab:CreateInput("Input Title", "Input Text", function(text, enterPressed)
     --code here
 end)
+```
 
-
+```lua
 local PvpSection = CombatTab:CreateSection("PVP Combo Configuration")
 
--- All widgets called from a SectionObject will perfectly align inside that container block
 PvpSection:CreateToggle("Enable Auto Killaura", function(state) end)
 PvpSection:CreateButton("Target Nearest Enemy", function() end)
 
-
--- G. Toast Notification Popups (Slide-in bottom right card with a Linear Progress Bar)
-
+```
+# Notification
+```lua
 VanixiaUI:CreateNotification({
 	Title = "Notification",
 	Description = "Description Notification",
@@ -81,16 +87,17 @@ VanixiaUI:CreateNotification({
 	Theme = "Dark", -- or Light, Yellow
 	Duration = 3
 })
+```
 
--- Can be globally invoked from anywhere via the VanixiaUI Core Class
+# Button
+
+```lua
 MainTab:CreateButton("Trigger Sample Alert", function()
 	--code here
 end)
-
--- H. Viewport Dimming Confirmation Dialog (Dialog - Intercepts mouse input and darkens window view)
--- Bound directly to the main Window Object
-
---dialog
+```
+# Dialog
+```lua
 
 Window:CreateDialog({
 		Title = "Dialog",
@@ -106,7 +113,10 @@ Window:CreateDialog({
 		end
 	})
 
---ex
+```
+ # EXAMPLE
+
+```lua
 
 MainTab:CreateButton("Click Test", function()
 	Window:CreateDialog({
