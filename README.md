@@ -15,7 +15,7 @@ To execute the VanixiaUI library from any script executor or client-side script,
 ```lua
 local VanixiaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thuan6565/Vanixian-UI-Library/refs/heads/main/VanixiaUI.lua"))()
 ```
-# Create Window
+### Create Window
 ```lua
 local Window = VanixiaUI:CreateWindow({
 	Title = "Vanixia Hub",
@@ -25,21 +25,21 @@ local Window = VanixiaUI:CreateWindow({
 	Color = "Yellow" -- or Light, Dark, and Yellow
 })
 ```
-# Tag
+### Tag
 ```lua
 Window:CreateTag("PREMIUM", "Yellow")
 ```
-# Tabs
+### Tabs
 ```lua
 local MainTab = Window:CreateTab("Home", "home")
 ```
-# Toggle
+### Toggle
 ```lua
 MainTab:CreateToggle("Toggle Name", function(state)
 	--code here
 end)
 ```
-# DropDown
+### DropDown
 ```lua
 
 MainTab:CreateDropdown("Dropdown", {"Value 1", "Value 2 ", "Value 3", "Value 4"}, function(selectedOption)
@@ -47,25 +47,25 @@ MainTab:CreateDropdown("Dropdown", {"Value 1", "Value 2 ", "Value 3", "Value 4"}
 end)
 
 ```
-# Slider
+### Slider
 ```lua
 MainTab:CreateSlider("Slider", 16, 500, 16, function(value)
     --code here
 end)
 ```
-# Paragraph
+### Paragraph
 
 ```lua
 MainTab:CreateParagraph("Paragraph Title", "You text here")
 ```
-# Input
+### Input
 ```lua
 
 MainTab:CreateInput("Input Title", "Input Text", function(text, enterPressed)
     --code here
 end)
 ```
-# Notification
+### Notification
 ```lua
 VanixiaUI:CreateNotification({
 	Title = "Notification",
@@ -76,13 +76,13 @@ VanixiaUI:CreateNotification({
 })
 ```
 
-# Button
+### Button
 ```lua
 MainTab:CreateButton("Button", function()
 	--code here
 end)
 ```
-# Dialog
+### Dialog
 ```lua
 
 Window:CreateDialog({
@@ -100,7 +100,7 @@ Window:CreateDialog({
 	})
 
 ```
- # this is all or 1.0, more in 1.2 version 
+ ### this is all or 1.0, more in 1.2 version 
 
 ## Open Source License
 This project is distributed under the lightweight MIT Open Source License. You are free to modify, customize, and bundle this UI package into your commercial or private script hubs. 
