@@ -18,7 +18,7 @@ local VanixiaUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Thu
 # Create Window
 ```lua
 local Window = VanixiaUI:CreateWindow({
-	Title = "Vanixia Tab Hub",
+	Title = "Vanixia Hub",
 	Author = "by Thuan69392",
 	Size = UDim2.fromOffset(536, 327),
 	ToggleKey = Enum.KeyCode.K, -- set your key code
@@ -31,16 +31,11 @@ Window:CreateTag("PREMIUM", "Yellow")
 ```
 # Tabs
 ```lua
-
 local MainTab = Window:CreateTab("Home", "home")
-local CombatTab = Window:CreateTab("Combat", "rocket")
-
-
-
 ```
 # Toggle
 ```lua
-MainTab:CreateToggle("Auto Collect Items", function(state)
+MainTab:CreateToggle("Toggle Name", function(state)
 	--code here
 end)
 ```
@@ -54,7 +49,7 @@ end)
 ```
 # Slider
 ```lua
-MainTab:CreateSlider("Movement Speed (WalkSpeed)", 16, 500, 16, function(value)
+MainTab:CreateSlider("Slider", 16, 500, 16, function(value)
     --code here
 end)
 ```
@@ -70,14 +65,6 @@ MainTab:CreateInput("Input Title", "Input Text", function(text, enterPressed)
     --code here
 end)
 ```
-
-```lua
-local PvpSection = CombatTab:CreateSection("PVP Combo Configuration")
-
-PvpSection:CreateToggle("Enable Auto Killaura", function(state) end)
-PvpSection:CreateButton("Target Nearest Enemy", function() end)
-
-```
 # Notification
 ```lua
 VanixiaUI:CreateNotification({
@@ -90,9 +77,8 @@ VanixiaUI:CreateNotification({
 ```
 
 # Button
-
 ```lua
-MainTab:CreateButton("Trigger Sample Alert", function()
+MainTab:CreateButton("Button", function()
 	--code here
 end)
 ```
