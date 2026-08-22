@@ -1,4 +1,4 @@
-# VanixiaUI Library
+# VanixiaUI Library - Roblox UI Library
 
 VanixiaUI is a premium, lightweight, and responsive Object-Oriented User Interface (UI) Library designed for Roblox script developers. Built entirely in Luau, it offers an elegant Fluent-inspired aesthetic, seamless cross-tab navigation, custom animated window systems, dynamic section categories, and automated auto-sizing tags.
 
